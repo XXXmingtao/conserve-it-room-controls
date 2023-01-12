@@ -23,6 +23,31 @@ public class Building {
         commonRooms.add(commonRoom);
     }
 
+    public List<Apartment> getAllApartments() {
+        return this.apartments;
+    }
+
+    public List<CommonRoom> getAllCommonRooms() {
+        return this.commonRooms;
+    }
+
+    public void displayAptStatus() {
+        for(int i = 0 ; i < apartments.size() ; i++) {
+            System.out.println(apartments.get(i));
+        }
+    }
+
+    public void displayCommonRoomStatus() {
+
+        for(CommonRoom commonRoom : this.commonRooms) {
+            System.out.println(commonRoom);
+        }
+    }
+
+    public float getRequestedTemperature() {
+        return this.requestedTemperature;
+    }
+
     public void setRequestedTemperature(float temperature) {
         this.requestedTemperature = temperature;
     }

@@ -16,6 +16,6 @@ public class CommonRoom extends Rooms{
     }
 
     public String toString() {
-        return String.format("Room Type: %s - Current Temperature: %.1f °C - Heater: %b - Air Conditioner: %b", this.roomType, this.getTemperature(), this.isHeaterStatus(), this,isAirConStatus());
+        return String.format("Room Type: %s - Current Temperature: %.1f °C - Heater: %b - Air Conditioner: %b", this.roomType, this.getTemperature(), this.isHeaterStatus(), this.isAirConStatus());
     }
 }

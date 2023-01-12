@@ -7,9 +7,41 @@ public class Main {
 
         CommonRoom room1 = new CommonRoom("Gym", 1, false, false);
 
-        System.out.println(apt1);
-        System.out.println(apt2);
-        System.out.println(room1);
+        Building building = new Building();
+        building.addApartment(apt1);
+        building.addApartment(apt2);
+
+        building.addCommonRoom(room1);
+
+        for(Apartment apt : building.getAllApartments()){
+            if(apt.getTemperature() < building.getRequestedTemperature()) {
+                apt.setHeaterStatus(true);
+                apt.setAirConStatus(false);
+            }
+            else if (apt.getTemperature() > building.getRequestedTemperature()) {
+                apt.setHeaterStatus(false);
+                apt.setAirConStatus(true);
+            }
+        }
+        System.out.println("All Apartment Status has shown below: ");
+        building.displayAptStatus();
+
+        System.out.println();
+
+
+        for(CommonRoom room : building.getAllCommonRooms()) {
+            if(room.getTemperature() < building.getRequestedTemperature()) {
+                room.setHeaterStatus(true);
+                room.setAirConStatus(false);
+            }
+            else if(room.getTemperature() > building.getRequestedTemperature()) {
+                room.setHeaterStatus(false);
+                room.setAirConStatus(true);
+            }
+        }
+
+        System.out.println("All common room status has shown below: ");
+        building.displayCommonRoomStatus();
     }
 
 }
