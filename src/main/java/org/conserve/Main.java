@@ -39,6 +39,14 @@ public class Main {
                     building.displayCommonRoomStatus();
                 }
 
+                if(selection == 3){
+                    System.out.println("Please enter the new apartment info in the following format: owner-roomID");
+                    String new_partment = scanner.nextLine();
+
+                    String[] parts = new_partment.split("-");
+                    building.addApartment(new Apartment(parts[0], Integer.parseInt(parts[1]), false, false));
+                }
+
                 if(selection == 5) {
                         break;
                 }
