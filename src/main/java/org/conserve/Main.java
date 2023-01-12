@@ -3,7 +3,7 @@ package org.conserve;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Apartment apt1 = new Apartment("Mingtao", 101, false, false);
         Apartment apt2 = new Apartment("Mingtao", 102, false, false);
 
@@ -120,38 +120,49 @@ public class Main {
             }
 
         }
+        int seconds = 0;
+        while(seconds != 20000) {
 
-        //Checking room temperature for Apartment
-        for(Apartment apt : building.getAllApartments()){
-            if(apt.getTemperature() < building.getRequestedTemperature()) {
-                apt.setHeaterStatus(true);
-                apt.setAirConStatus(false);
+            //Checking room temperature for Apartment
+            building.evaluateAptTemperature();
+            System.out.println("All Apartment Status has shown below: ");
+            building.displayAptStatus();
+
+            System.out.println();
+
+            //Checking room temperature for Common Room
+            building.evaluateCommonRoomTemperature();
+            System.out.println("All common room status has shown below: ");
+            building.displayCommonRoomStatus();
+
+
+            //Air-con and Heater effects for apartments
+            for(Apartment apt : building.getAllApartments()){
+                if(apt.isHeaterStatus()){
+                    apt.setTemperature(apt.getTemperature()+1);
+                } else if(apt.isAirConStatus()){
+                    apt.setTemperature(apt.getTemperature()-1);
+                } else if(apt.isAirConStatus() == false && apt.isHeaterStatus() == false){
+                    apt.setTemperature(apt.getTemperature()+0.5f);
+                }
             }
-            else if (apt.getTemperature() > building.getRequestedTemperature()) {
-                apt.setHeaterStatus(false);
-                apt.setAirConStatus(true);
+
+            //Air-con and Heater effects for commonRoom
+            for(CommonRoom commonRoom : building.getAllCommonRooms()) {
+                if(commonRoom.isHeaterStatus()) {
+                    commonRoom.setTemperature(commonRoom.getTemperature()+1);
+                } else if(commonRoom.isAirConStatus()) {
+                    commonRoom.setTemperature(commonRoom.getTemperature()-1);
+                } else if(commonRoom.isAirConStatus() == false && commonRoom.isHeaterStatus() == false) {
+                    commonRoom.setTemperature(commonRoom.getTemperature()+0.5f);
+                }
             }
+
+            Thread.sleep(1000);
+            seconds += 1000;
         }
 
-        System.out.println("All Apartment Status has shown below: ");
-        building.displayAptStatus();
 
-        System.out.println();
-
-        //Checking room temperature for Common Room
-        for(CommonRoom room : building.getAllCommonRooms()) {
-            if(room.getTemperature() < building.getRequestedTemperature()) {
-                room.setHeaterStatus(true);
-                room.setAirConStatus(false);
-            }
-            else if(room.getTemperature() > building.getRequestedTemperature()) {
-                room.setHeaterStatus(false);
-                room.setAirConStatus(true);
-            }
-        }
-
-        System.out.println("All common room status has shown below: ");
-        building.displayCommonRoomStatus();
     }
 
 }

@@ -60,4 +60,37 @@ public class Building {
         this.requestedTemperature = temperature;
     }
 
+    public void evaluateAptTemperature() {
+        for(Apartment apt : this.getAllApartments()){
+            if(apt.getTemperature() < this.getRequestedTemperature() - 2) {
+                apt.setHeaterStatus(true);
+                apt.setAirConStatus(false);
+            }
+            else if (apt.getTemperature() > this.getRequestedTemperature() + 2) {
+                apt.setHeaterStatus(false);
+                apt.setAirConStatus(true);
+            }
+            else {
+                apt.setHeaterStatus(false);
+                apt.setAirConStatus(false);
+            }
+        }
+    }
+
+    public void evaluateCommonRoomTemperature() {
+        for(CommonRoom room : this.getAllCommonRooms()) {
+            if(room.getTemperature() < this.getRequestedTemperature() - 2) {
+                room.setHeaterStatus(true);
+                room.setAirConStatus(false);
+            }
+            else if(room.getTemperature() > this.getRequestedTemperature() + 2) {
+                room.setHeaterStatus(false);
+                room.setAirConStatus(true);
+            } else {
+                room.setHeaterStatus(false);
+                room.setAirConStatus(false);
+            }
+        }
+    }
+
 }

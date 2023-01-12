@@ -15,7 +15,7 @@ abstract class Rooms {
         this.roomID = roomID;
     }
 
-    public double getTemperature(){
+    public float getTemperature(){
         return temperature;
     }
 
