@@ -15,4 +15,11 @@ public class Apartment extends Rooms {
         this.setAirConStatus(airConStatus);
     }
 
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
 }
