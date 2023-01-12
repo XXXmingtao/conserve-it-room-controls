@@ -2,6 +2,8 @@ package org.conserve;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Apartment apt1 = new Apartment("Mingtao", 101, false, false);
+
     }
+
 }
