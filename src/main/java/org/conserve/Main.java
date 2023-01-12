@@ -28,10 +28,14 @@ public class Main {
             System.out.println(" 4 - Add new common room to the building");
             System.out.println(" 5 - Setpoint for requested temperature");
             System.out.println(" 6 - Start monitoring");
+            System.out.println(" x - Exit");
             System.out.println("Your input >> ");
 
             try {
                 String user_input = scanner.nextLine();
+                if(user_input.equals("x")) {
+                    System.exit(0);
+                }
                 int selection = Integer.parseInt(user_input);
 
                 if(selection == 1) {
@@ -98,19 +102,19 @@ public class Main {
                 }
                 //Alter setpoint temperature
                 if(selection == 5) {
-                    System.out.println("Please enter the setpoint for requested room temperature, valid range is 5 to 40");
+                    System.out.println("Please enter the setpoint for requested room temperature, valid range is 15 to 27");
                     System.out.println();
                     String setPoint = scanner.nextLine();
                     try {
                         int newSetPoint = Integer.parseInt(setPoint);
-                        if(newSetPoint < 5 || newSetPoint > 40) {
-                            System.out.println("Please enter a valid Integer, Valid range is 5 to 40");
+                        if(newSetPoint < 15 || newSetPoint > 27) {
+                            System.out.println("Please enter a valid Integer, Valid range is 15 to 27");
                         } else {
                             building.setRequestedTemperature(newSetPoint);
                             System.out.println(building.getRequestedTemperature());
                         }
                     } catch (Exception e) {
-                        System.out.println("Please enter a valid Integer, Valid range is 5 to 40");
+                        System.out.println("Please enter a valid Integer, Valid range is 15 to 27");
                     }
                 }
 
