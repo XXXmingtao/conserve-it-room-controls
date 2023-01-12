@@ -25,7 +25,7 @@ public class Main {
             System.out.println(" 3 - Add new apartment to the building");
             System.out.println(" 4 - Add new common room to the building");
             System.out.println(" 5 - Start monitoring");
-            System.out.println("Your input>> ");
+            System.out.println("Your input >> ");
 
             try {
                 String user_input = scanner.nextLine();
@@ -46,23 +46,46 @@ public class Main {
                     System.out.println();
                     String new_apartment = scanner.nextLine();
                     try {
-                        String[] parts = new_apartment.split("-");
+                        String[] aptInfo = new_apartment.split("-");
                         for(Apartment apartment : building.getAllApartments()) {
-                            if(apartment.getRoomID() == Integer.parseInt(parts[1])) {
-                                System.out.println(String.format("Room ID %s has already exist", parts[1]));
+                            if(apartment.getRoomID() == Integer.parseInt(aptInfo[1])) {
+                                System.out.println(String.format("Room ID %s has already exist", aptInfo[1]));
                                 System.out.println();
                                 errorFlag = true;
                             }
                         }
                         if(errorFlag == false){
-                            building.addApartment(new Apartment(parts[0], Integer.parseInt(parts[1]), false, false));
+                            building.addApartment(new Apartment(aptInfo[0], Integer.parseInt(aptInfo[1]), false, false));
                         }
                     } catch (Exception e) {
                         System.out.println("Please check your input is in right format... e.g. 100-Ming");
                     }
                 }
 
+                //Function to add new Common Room
                 if(selection == 4){
+                    boolean errorFlag = false;
+                    System.out.println("Please enter the new apartment info in the following format: roomType-roomID");
+                    System.out.println();
+                    String newRoom = scanner.nextLine();
+                    try {
+
+                        String [] roomInfo = newRoom.split("-");
+                        for(CommonRoom commonRoom : building.getAllCommonRooms()) {
+                            if(commonRoom.getRoomID() == Integer.parseInt(roomInfo[1])){
+                                System.out.println(String.format("Room ID %s has already exist", roomInfo[1]));
+                                System.out.println();
+                                errorFlag = true;
+                            }
+                        }
+                        if(errorFlag == false){
+                            building.addCommonRoom(new CommonRoom(roomInfo[0], Integer.parseInt(roomInfo[1]),false,false));
+                        }
+
+                    } catch (Exception e){
+
+                        System.out.println("Please check your input is in right format... e.g. Library-3");
+                    }
 
                 }
 
