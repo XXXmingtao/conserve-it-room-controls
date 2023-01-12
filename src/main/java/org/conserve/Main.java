@@ -24,7 +24,8 @@ public class Main {
             System.out.println(" 2 - Display all monitored common room");
             System.out.println(" 3 - Add new apartment to the building");
             System.out.println(" 4 - Add new common room to the building");
-            System.out.println(" 5 - Start monitoring");
+            System.out.println(" 5 - Setpoint for requested temperature");
+            System.out.println(" 6 - Start monitoring");
             System.out.println("Your input >> ");
 
             try {
@@ -78,8 +79,13 @@ public class Main {
                                 errorFlag = true;
                             }
                         }
+                        if(!(building.getRoomTypes().contains(roomInfo[0].toUpperCase()))) {
+                            System.out.println(String.format("Room Type %s is not valid, valid input including: Gym,Library,Laundry ", roomInfo[0]));
+                            System.out.println();
+                            errorFlag = true;
+                        }
                         if(errorFlag == false){
-                            building.addCommonRoom(new CommonRoom(roomInfo[0], Integer.parseInt(roomInfo[1]),false,false));
+                            building.addCommonRoom(new CommonRoom(roomInfo[0].toUpperCase(), Integer.parseInt(roomInfo[1]),false,false));
                         }
 
                     } catch (Exception e){
@@ -88,17 +94,34 @@ public class Main {
                     }
 
                 }
-
+                //Alter setpoint temperature
                 if(selection == 5) {
+                    System.out.println("Please enter the setpoint for requested room temperature, valid range is 5 to 40");
+                    System.out.println();
+                    String setPoint = scanner.nextLine();
+                    try {
+                        int newSetPoint = Integer.parseInt(setPoint);
+                        if(newSetPoint < 5 || newSetPoint > 40) {
+                            System.out.println("Please enter a valid Integer, Valid range is 5 to 40");
+                        } else {
+                            building.setRequestedTemperature(newSetPoint);
+                            System.out.println(building.getRequestedTemperature());
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Please enter a valid Integer, Valid range is 5 to 40");
+                    }
+                }
+
+                if(selection == 6) {
                         break;
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println("Please select between option 1-5");
             }
 
         }
 
-
+        //Checking room temperature for Apartment
         for(Apartment apt : building.getAllApartments()){
             if(apt.getTemperature() < building.getRequestedTemperature()) {
                 apt.setHeaterStatus(true);
@@ -115,7 +138,7 @@ public class Main {
 
         System.out.println();
 
-
+        //Checking room temperature for Common Room
         for(CommonRoom room : building.getAllCommonRooms()) {
             if(room.getTemperature() < building.getRequestedTemperature()) {
                 room.setHeaterStatus(true);

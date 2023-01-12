@@ -1,5 +1,7 @@
 package org.conserve;
 
+import java.util.ArrayList;
+
 public class CommonRoom extends Rooms{
     private String roomType;
 
