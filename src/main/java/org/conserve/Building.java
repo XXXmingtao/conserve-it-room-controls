@@ -60,6 +60,7 @@ public class Building {
         this.requestedTemperature = temperature;
     }
 
+    //Evaluate temperature for apartment
     public void evaluateAptTemperature() {
         for(Apartment apt : this.getAllApartments()){
             if(apt.getTemperature() < this.getRequestedTemperature() - 2) {
@@ -77,6 +78,7 @@ public class Building {
         }
     }
 
+    //Evaluate temperature for common Rooms
     public void evaluateCommonRoomTemperature() {
         for(CommonRoom room : this.getAllCommonRooms()) {
             if(room.getTemperature() < this.getRequestedTemperature() - 2) {
