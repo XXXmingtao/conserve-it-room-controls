@@ -7,12 +7,14 @@ public class Main {
         Apartment apt1 = new Apartment("Mingtao", 101, false, false);
         Apartment apt2 = new Apartment("Mingtao", 102, false, false);
 
-        CommonRoom room1 = new CommonRoom("Gym", 1, false, false);
+        CommonRoom gym = new CommonRoom("GYM", 1, false, false);
+        CommonRoom library = new CommonRoom("LIBRARY", 2, false, false);
 
         Building building = new Building();
         building.addApartment(apt1);
         building.addApartment(apt2);
-        building.addCommonRoom(room1);
+        building.addCommonRoom(gym);
+        building.addCommonRoom(library);
         building.setRequestedTemperature(25.0f);
 
         Scanner scanner = new Scanner(System.in);
