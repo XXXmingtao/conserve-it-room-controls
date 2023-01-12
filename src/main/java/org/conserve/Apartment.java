@@ -9,8 +9,8 @@ public class Apartment extends Rooms {
         this.ownerName = owner;
 
         this.setRoomID(roomID);
-        float tem = (float)Math.floor(Math.random() * (40 - 10 + 1) + 10);
-        this.setTemperature(tem);
+        //float tem = (float)Math.floor(Math.random() * (40 - 10 + 1) + 10);
+        //this.setTemperature(tem);
         this.setHeaterStatus(heaterStatus);
         this.setAirConStatus(airConStatus);
     }

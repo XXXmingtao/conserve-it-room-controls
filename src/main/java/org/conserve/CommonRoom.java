@@ -7,10 +7,15 @@ public class CommonRoom extends Rooms{
         this.roomType = roomType;
         this.setRoomID(roomID);
         this.setHeaterStatus(false);
-        this.setAirConStatus(true);
+        this.setAirConStatus(false);
     }
 
     public String getRoomType() {
+
         return roomType;
+    }
+
+    public String toString() {
+        return String.format("Room Type: %s - Current Temperature: %.1f °C - Heater: %b - Air Conditioner: %b", this.roomType, this.getTemperature(), this.isHeaterStatus(), this,isAirConStatus());
     }
 }

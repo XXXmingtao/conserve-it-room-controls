@@ -2,7 +2,7 @@ package org.conserve;
 
 abstract class Rooms {
     private int roomID;
-    private float temperature;
+    private float temperature = (float)Math.floor(Math.random() * (40 - 10 + 1) + 10);
     private boolean heaterStatus = false;
     private boolean airConStatus = false;
 
