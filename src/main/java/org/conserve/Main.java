@@ -14,18 +14,18 @@ public class Main {
         building.addApartment(apt2);
         building.addCommonRoom(room1);
         building.setRequestedTemperature(25.0f);
-        //User Menu
+
         Scanner scanner = new Scanner(System.in);
 
         while(true) {
-
+            //User Menu
             System.out.println("Welcome to the room control system - Aurora! Please make selection below to further interact...");
             System.out.println(" 1 - Display all monitored apartments");
             System.out.println(" 2 - Display all monitored common room");
             System.out.println(" 3 - Add new apartment to the building");
             System.out.println(" 4 - Add new common room to the building");
             System.out.println(" 5 - Start monitoring");
-            System.out.println("You enter: ");
+            System.out.println("Your input>> ");
 
             try {
                 String user_input = scanner.nextLine();
@@ -39,12 +39,31 @@ public class Main {
                     building.displayCommonRoomStatus();
                 }
 
+                //Function to add new apartment
                 if(selection == 3){
+                    Boolean errorFlag = false;
                     System.out.println("Please enter the new apartment info in the following format: owner-roomID");
-                    String new_partment = scanner.nextLine();
+                    System.out.println();
+                    String new_apartment = scanner.nextLine();
+                    try {
+                        String[] parts = new_apartment.split("-");
+                        for(Apartment apartment : building.getAllApartments()) {
+                            if(apartment.getRoomID() == Integer.parseInt(parts[1])) {
+                                System.out.println(String.format("Room ID %s has already exist", parts[1]));
+                                System.out.println();
+                                errorFlag = true;
+                            }
+                        }
+                        if(errorFlag == false){
+                            building.addApartment(new Apartment(parts[0], Integer.parseInt(parts[1]), false, false));
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Please check your input is in right format... e.g. 100-Ming");
+                    }
+                }
 
-                    String[] parts = new_partment.split("-");
-                    building.addApartment(new Apartment(parts[0], Integer.parseInt(parts[1]), false, false));
+                if(selection == 4){
+
                 }
 
                 if(selection == 5) {
