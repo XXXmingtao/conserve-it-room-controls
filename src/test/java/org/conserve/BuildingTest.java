@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class BuildingTest {
 
@@ -20,6 +21,26 @@ class BuildingTest {
         building = new Building();
         building.addApartment(apt1);
         building.addCommonRoom(gym);
+    }
+
+    @Test
+    @DisplayName("Building can add new apartment")
+    void addApartment_function() {
+        Apartment apt2 = new Apartment("Mingtao", 102, false, false);
+        building.addApartment(apt2);
+
+        assertThat(building.getAllApartments())
+                .extracting("roomID").contains(102);
+    }
+
+    @Test
+    @DisplayName("Building can add new common room")
+    void addCommonRoom_function() {
+        CommonRoom room2 = new CommonRoom("Laundry", 2, false, false);
+        building.addCommonRoom(room2);
+
+        assertThat(building.getAllCommonRooms())
+                .extracting("roomID").contains(2);
     }
 
     @Test

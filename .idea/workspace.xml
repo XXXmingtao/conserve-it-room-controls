@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59e0701c-8ee0-4df7-80af-1f86d4e874b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/conserve/ApartmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/conserve/BuildingTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/conserve/BuildingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/conserve/BuildingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,23 +62,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="ApartmentTest.setOwnerName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RoomControlSystems" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.conserve.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.conserve" />
-      <option name="MAIN_CLASS_NAME" value="org.conserve.ApartmentTest" />
-      <option name="METHOD_NAME" value="setOwnerName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BuildingTest.evaluateAptTemperature" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BuildingTest.addApartment_function" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RoomControlSystems" />
       <extension name="coverage">
         <pattern>
@@ -89,7 +72,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.conserve" />
       <option name="MAIN_CLASS_NAME" value="org.conserve.BuildingTest" />
-      <option name="METHOD_NAME" value="evaluateAptTemperature" />
+      <option name="METHOD_NAME" value="addApartment_function" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuildingTest.addCommonRoom_function" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RoomControlSystems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.conserve.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.conserve" />
+      <option name="MAIN_CLASS_NAME" value="org.conserve.BuildingTest" />
+      <option name="METHOD_NAME" value="addCommonRoom_function" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BuildingTest.addCommonRoom_function" />
+        <item itemvalue="JUnit.BuildingTest.addApartment_function" />
         <item itemvalue="JUnit.BuildingTest.evaluateAptTemperature_both_in_changing_temperature" />
         <item itemvalue="JUnit.BuildingTest.evaluateAptTemperature_heater" />
         <item itemvalue="JUnit.BuildingTest.evaluateAptTemperature_airCon" />
-        <item itemvalue="JUnit.BuildingTest.evaluateAptTemperature" />
-        <item itemvalue="JUnit.ApartmentTest.setOwnerName" />
       </list>
     </recent_temporary>
   </component>
