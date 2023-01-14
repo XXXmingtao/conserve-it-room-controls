@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59e0701c-8ee0-4df7-80af-1f86d4e874b5" name="Changes" comment="" />
+    <list default="true" id="59e0701c-8ee0-4df7-80af-1f86d4e874b5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/conserve/ApartmentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/conserve/BuildingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -36,24 +42,106 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.conserve" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
+    <configuration name="ApartmentTest.setOwnerName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RoomControlSystems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.conserve.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.conserve" />
+      <option name="MAIN_CLASS_NAME" value="org.conserve.ApartmentTest" />
+      <option name="METHOD_NAME" value="setOwnerName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuildingTest.evaluateAptTemperature" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RoomControlSystems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.conserve.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.conserve" />
+      <option name="MAIN_CLASS_NAME" value="org.conserve.BuildingTest" />
+      <option name="METHOD_NAME" value="evaluateAptTemperature" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuildingTest.evaluateAptTemperature_airCon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RoomControlSystems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.conserve.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.conserve" />
+      <option name="MAIN_CLASS_NAME" value="org.conserve.BuildingTest" />
+      <option name="METHOD_NAME" value="evaluateAptTemperature_airCon" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuildingTest.evaluateAptTemperature_both_in_changing_temperature" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RoomControlSystems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.conserve.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.conserve" />
+      <option name="MAIN_CLASS_NAME" value="org.conserve.BuildingTest" />
+      <option name="METHOD_NAME" value="evaluateAptTemperature_both_in_changing_temperature" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BuildingTest.evaluateAptTemperature_heater" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RoomControlSystems" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.conserve.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.conserve" />
+      <option name="MAIN_CLASS_NAME" value="org.conserve.BuildingTest" />
+      <option name="METHOD_NAME" value="evaluateAptTemperature_heater" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
@@ -63,7 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.Dockerfile" />
+        <item itemvalue="JUnit.BuildingTest.evaluateAptTemperature_both_in_changing_temperature" />
+        <item itemvalue="JUnit.BuildingTest.evaluateAptTemperature_heater" />
+        <item itemvalue="JUnit.BuildingTest.evaluateAptTemperature_airCon" />
+        <item itemvalue="JUnit.BuildingTest.evaluateAptTemperature" />
+        <item itemvalue="JUnit.ApartmentTest.setOwnerName" />
       </list>
     </recent_temporary>
   </component>
